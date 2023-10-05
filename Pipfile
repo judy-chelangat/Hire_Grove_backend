@@ -11,14 +11,8 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 sqlalchemy-serializer = "*"
 flask-restful = "*"
-flask-jwt-extended = "*"
-flask-wtf = "*"
-email-validator = "*"
-flask-cors = "*"
-faker = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
-python_full_version = "3.10.13"
+python_version = "3.8"
