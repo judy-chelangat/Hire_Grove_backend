@@ -1,8 +1,8 @@
-"""new
+"""new column
 
-Revision ID: 17234e23313c
+Revision ID: 8a31323ebff4
 Revises: 
-Create Date: 2023-10-06 00:04:05.402462
+Create Date: 2023-10-06 10:46:59.104511
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '17234e23313c'
+revision = '8a31323ebff4'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -24,7 +24,7 @@ def upgrade():
     sa.Column('description', sa.Text(), nullable=False),
     sa.Column('location', sa.String(length=255), nullable=False),
     sa.Column('company_name', sa.String(length=255), nullable=False),
-    sa.Column('posted_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('posted_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('company_image', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -41,7 +41,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('cover_letter', sa.Text(), nullable=False),
     sa.Column('resume_url', sa.String(length=255), nullable=False),
-    sa.Column('applied_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('applied_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('job_listing_id', sa.Integer(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['job_listing_id'], ['job_lists.id'], name=op.f('fk_job_applications_job_listing_id_job_lists')),
