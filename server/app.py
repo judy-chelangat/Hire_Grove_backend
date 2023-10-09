@@ -22,7 +22,7 @@ app.config['WTF_CSRF_ENABLED'] = False
 
 jwt = JWTManager(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://new_db_0303_user:m01q2upagdO815i82UUgmbx3ucoaclpc@dpg-ckfirdeafg7c73abm1i0-a.oregon-postgres.render.com/new'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://hiregrove_user:sVirxnEym8eeynTQ2FpvXfH31ulUO94f@dpg-cki4oc212bvs73a756r0-a.oregon-postgres.render.com/hiregrove'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.json.compact = False
